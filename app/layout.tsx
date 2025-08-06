@@ -4,25 +4,27 @@ import { Inter } from 'next/font/google';
 import { Toaster } from 'sonner';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { WhatsAppWidget } from '@/components/widgets/WhatsAppWidget';
+import { VisitorCounter } from '@/components/widgets/VisitorCounter';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'SustyDigiMarketers - Elevating Tech for the Future',
-  description: 'Leading digital marketing and SaaS solutions company offering innovative products and services to elevate your business technology.',
+  title: 'Susty Digi Marketers - Tech Solutions & Digital Services',
+  description: 'Leading tech company offering SaaS products and digital services including CRM, POS systems, mobile apps, web development, and AI automation solutions.',
   keywords: 'digital marketing, SaaS, CRM, POS system, web development, mobile apps, SEO',
-  authors: [{ name: 'SustyDigiMarketers' }],
+  authors: [{ name: 'Susty Digi Marketers' }],
   openGraph: {
-    title: 'SustyDigiMarketers - Elevating Tech for the Future',
-    description: 'Leading digital marketing and SaaS solutions company offering innovative products and services to elevate your business technology.',
+    title: 'Susty Digi Marketers - Tech Solutions & Digital Services',
+    description: 'Leading tech company offering SaaS products and digital services including CRM, POS systems, mobile apps, web development, and AI automation solutions.',
     url: 'https://sustydigimarketers.com',
-    siteName: 'SustyDigiMarketers',
+    siteName: 'Susty Digi Marketers',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'SustyDigiMarketers',
+        alt: 'Susty Digi Marketers',
       },
     ],
     locale: 'en_US',
@@ -30,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SustyDigiMarketers - Elevating Tech for the Future',
-    description: 'Leading digital marketing and SaaS solutions company offering innovative products and services to elevate your business technology.',
+    title: 'Susty Digi Marketers - Tech Solutions & Digital Services',
+    description: 'Leading tech company offering SaaS products and digital services including CRM, POS systems, mobile apps, web development, and AI automation solutions.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -63,21 +65,44 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "SustyDigiMarketers",
-              "description": "Leading digital marketing and SaaS solutions company",
+              "name": "Susty Digi Marketers",
+              "description": "Leading tech company offering SaaS products and digital services",
               "url": "https://sustydigimarketers.com",
               "logo": "https://sustydigimarketers.com/logo.png",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "71-75 Shelton Street, Covent Garden",
+                "addressLocality": "London",
+                "addressCountry": "UK",
+                "postalCode": "WC2H 9JQ"
+              },
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+1-555-0123",
+                "telephone": "020 4628 6577",
                 "contactType": "customer service"
               },
               "sameAs": [
-                "https://facebook.com/sustydigimarketers",
-                "https://twitter.com/sustydigimarketers",
-                "https://linkedin.com/company/sustydigimarketers"
+                "https://www.facebook.com/profile.php?id=61577932965591",
+                "https://www.instagram.com/sustydigimarketers",
+                "https://www.youtube.com/@SustyDigiMarketers",
+                "https://www.reddit.com/user/TechnicalSnow3450",
+                "https://x.com/SustyDigi"
               ]
             })
+          }}
+        />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'GA_MEASUREMENT_ID');
+            `,
           }}
         />
       </head>
@@ -88,6 +113,8 @@ export default function RootLayout({
         </main>
         <Footer />
         <Toaster position="top-right" />
+        <WhatsAppWidget />
+        <VisitorCounter />
       </body>
     </html>
   );

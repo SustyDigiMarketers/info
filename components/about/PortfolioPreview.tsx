@@ -101,7 +101,7 @@ export function PortfolioPreview() {
         >
           <Link href="/portfolio">
             <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4">
-              View Full Portfolio
+              See Our Work
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>

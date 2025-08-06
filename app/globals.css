@@ -108,3 +108,44 @@
 .animation-delay-4000 {
   animation-delay: 4s;
 }
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .animate-blob {
+    animation-duration: 10s;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 768px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Laptop optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .text-7xl {
+    font-size: 4rem;
+    line-height: 1;
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 1200px;
+  }
+}

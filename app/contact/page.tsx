@@ -5,11 +5,11 @@ import { ContactInfo } from '@/components/contact/ContactInfo';
 import { ContactMap } from '@/components/contact/ContactMap';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - SustyDigiMarketers',
-  description: 'Get in touch with SustyDigiMarketers. Contact us for your digital marketing and SaaS solution needs.',
+  title: 'Contact Us - Susty Digi Marketers',
+  description: 'Get in touch with Susty Digi Marketers. Contact us for your digital marketing and SaaS solution needs.',
   openGraph: {
-    title: 'Contact Us - SustyDigiMarketers',
-    description: 'Get in touch with SustyDigiMarketers. Contact us for your digital marketing and SaaS solution needs.',
+    title: 'Contact Us - Susty Digi Marketers',
+    description: 'Get in touch with Susty Digi Marketers. Contact us for your digital marketing and SaaS solution needs.',
   },
 };
 

@@ -47,13 +47,13 @@ export function Navbar() {
             <Link href="/" className="flex items-center space-x-2">
               <Image
                 src="/Adobe Express - file.png"
-                alt="SustyDigiMarketers Logo"
+                alt="Susty Digi Marketers Logo"
                 width={40}
                 height={40}
                 className="w-10 h-10"
               />
               <span className="font-bold text-xl text-gray-900">
-                SustyDigiMarketers
+                Susty Digi Marketers
               </span>
             </Link>
 

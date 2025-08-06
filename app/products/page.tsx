@@ -5,10 +5,10 @@ import { ProductComparison } from '@/components/products/ProductComparison';
 import { ProductCTA } from '@/components/products/ProductCTA';
 
 export const metadata: Metadata = {
-  title: 'SaaS Products - SustyDigiMarketers',
+  title: 'SaaS Products - Susty Digi Marketers',
   description: 'Explore our comprehensive suite of SaaS products including CRM, POS systems, billing solutions, and more.',
   openGraph: {
-    title: 'SaaS Products - SustyDigiMarketers',
+    title: 'SaaS Products - Susty Digi Marketers',
     description: 'Explore our comprehensive suite of SaaS products including CRM, POS systems, billing solutions, and more.',
   },
 };

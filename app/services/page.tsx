@@ -5,10 +5,10 @@ import { ServiceProcess } from '@/components/services/ServiceProcess';
 import { ServicesCTA } from '@/components/services/ServicesCTA';
 
 export const metadata: Metadata = {
-  title: 'Digital Services - SustyDigiMarketers',
+  title: 'Digital Services - Susty Digi Marketers',
   description: 'Comprehensive digital services including mobile app development, web development, SEO, social media management, and more.',
   openGraph: {
-    title: 'Digital Services - SustyDigiMarketers',
+    title: 'Digital Services - Susty Digi Marketers',
     description: 'Comprehensive digital services including mobile app development, web development, SEO, social media management, and more.',
   },
 };

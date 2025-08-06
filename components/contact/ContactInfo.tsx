@@ -9,19 +9,19 @@ const contactDetails = [
   {
     icon: MapPin,
     title: 'Office Address',
-    details: ['123 Tech Street', 'Digital City, DC 12345', 'United States'],
+    details: ['71-75 Shelton Street', 'Covent Garden, London', 'UK, WC2H 9JQ'],
     color: 'from-blue-500 to-cyan-600',
   },
   {
     icon: Phone,
     title: 'Phone Numbers',
-    details: ['+1 (555) 123-4567', '+1 (555) 987-6543', 'Mon-Fri: 9AM-6PM EST'],
+    details: ['020 4628 6577', 'Mon-Fri: 9AM-6PM GMT', 'Emergency Support Available'],
     color: 'from-purple-500 to-violet-600',
   },
   {
     icon: Mail,
     title: 'Email Addresses',
-    details: ['info@sustydigimarketers.com', 'support@sustydigimarketers.com', 'sales@sustydigimarketers.com'],
+    details: ['Contact@sustydigimarketers.com', 'Sales@sustydigimarketers.com', 'info@sustydigimarketers.com'],
     color: 'from-green-500 to-emerald-600',
   },
   {

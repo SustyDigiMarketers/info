@@ -4,10 +4,10 @@ import { PortfolioFilter } from '@/components/portfolio/PortfolioFilter';
 import { PortfolioGrid } from '@/components/portfolio/PortfolioGrid';
 
 export const metadata: Metadata = {
-  title: 'Portfolio - SustyDigiMarketers',
+  title: 'Portfolio - Susty Digi Marketers',
   description: 'Explore our portfolio of successful projects including web development, mobile apps, branding, and digital marketing campaigns.',
   openGraph: {
-    title: 'Portfolio - SustyDigiMarketers',
+    title: 'Portfolio - Susty Digi Marketers',
     description: 'Explore our portfolio of successful projects including web development, mobile apps, branding, and digital marketing campaigns.',
   },
 };

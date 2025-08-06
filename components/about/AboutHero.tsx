@@ -15,11 +15,11 @@ export function AboutHero() {
         >
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             About <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              SustyDigiMarketers
+              Susty Digi Marketers
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto">
-            We're passionate about elevating technology for the future, creating innovative solutions 
+            We're passionate about creating innovative technology solutions for the digital age, 
             that transform businesses and drive digital success.
           </p>
         </motion.div>

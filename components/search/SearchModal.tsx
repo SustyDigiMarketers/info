@@ -21,12 +21,14 @@ const searchData: SearchResult[] = [
   { id: '2', title: 'Smart Billing System', description: 'Automated billing and payment reminders', url: '/products/billing-system', type: 'product' },
   { id: '3', title: 'POS System', description: 'Point of sale for restaurants and retail', url: '/products/pos-system', type: 'product' },
   { id: '4', title: 'RFID-POS System', description: 'Advanced RFID-enabled point of sale', url: '/products/rfid-pos', type: 'product' },
+  { id: '12', title: 'Patient Management Software', description: 'Healthcare management with patient records', url: '/products/patient-management', type: 'product' },
   
   // Services
   { id: '5', title: 'Mobile App Development', description: 'iOS and Android app development', url: '/services#mobile-app-development', type: 'service' },
   { id: '6', title: 'Web Development', description: 'Modern website development', url: '/services#web-development', type: 'service' },
   { id: '7', title: 'SEO Services', description: 'Search engine optimization', url: '/services#seo', type: 'service' },
   { id: '8', title: 'Social Media Management', description: 'Social media marketing and growth', url: '/services#social-media', type: 'service' },
+  { id: '13', title: 'AI Automation', description: 'AI automation and business optimization', url: '/services#ai-automation', type: 'service' },
   
   // Pages
   { id: '9', title: 'About Us', description: 'Learn about our company and mission', url: '/about', type: 'page' },

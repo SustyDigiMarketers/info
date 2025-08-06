@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MessageSquare, CreditCard, ShoppingCart, Zap, PieChart, Monitor, Share2, Headphones, Users } from 'lucide-react';
+import { MessageSquare, CreditCard, ShoppingCart, Zap, PieChart, Monitor, Share2, Headphones, Users, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -98,6 +98,16 @@ const products = [
     color: 'from-emerald-500 to-green-600',
     features: ['Project Management', 'File Sharing', 'Team Chat', 'Time Tracking'],
     pricing: '$45/month',
+    popular: false,
+  },
+  {
+    id: 'patient-management',
+    title: 'Patient Management Software',
+    description: 'Comprehensive healthcare management system with patient records, appointments, and medical history tracking.',
+    icon: Heart,
+    color: 'from-red-500 to-pink-600',
+    features: ['Patient Records', 'Appointment Scheduling', 'Medical History', 'Prescription Management'],
+    pricing: '$55/month',
     popular: false,
   },
 ];
