@@ -46,35 +46,50 @@ export function ProjectModal({ isOpen, onClose, serviceId, serviceName }: Projec
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // Here you would typically send the data to your backend
-    const projectData = {
-      ...formData,
-      serviceId,
-      serviceName,
-      timestamp: new Date().toISOString(),
-      type: 'project_inquiry',
-    };
-    
-    console.log('Project inquiry:', projectData);
-    
-    toast.success('Project inquiry submitted successfully! We\'ll contact you within 24 hours.');
-    setIsLoading(false);
-    onClose();
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      address: '',
-      budget: '',
-      timeline: '',
-      projectDetails: '',
-    });
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbww735qKYaIPKxqWoGsXRrqhyDkSax37V8w7iZbosaJZLFR3DtqZ2eay2j-7kuyGEroXg/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sheet: 'projects',
+          Name: formData.name,
+          Email: formData.email,
+          Phone: formData.phone,
+          Company: formData.company,
+          Address: formData.address,
+          Budget: formData.budget,
+          Timeline: formData.timeline,
+          ProjectDetails: formData.projectDetails,
+          ServiceID: serviceId,
+          ServiceName: serviceName,
+          Date: new Date().toISOString(),
+          Type: 'project_inquiry'
+        }),
+      });
+
+      if (response.ok) {
+        toast.success('Project inquiry submitted successfully! We\'ll contact you within 24 hours.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          address: '',
+          budget: '',
+          timeline: '',
+          projectDetails: '',
+        });
+        onClose();
+      } else {
+        throw new Error('Failed to submit project inquiry');
+      }
+    } catch (error) {
+      toast.error('Failed to submit inquiry. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

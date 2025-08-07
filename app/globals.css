@@ -125,6 +125,20 @@ html {
   .animate-blob {
     animation-duration: 10s;
   }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Fix form spacing on mobile */
+  .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
 }
 
 /* Tablet optimizations */
@@ -132,6 +146,11 @@ html {
   .container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+  
+  /* Ensure proper spacing on tablets */
+  .grid {
+    gap: 1.5rem;
   }
 }
 
@@ -141,11 +160,47 @@ html {
     font-size: 4rem;
     line-height: 1;
   }
+  
+  .grid {
+    gap: 2rem;
+  }
 }
 
 /* Desktop optimizations */
 @media (min-width: 1025px) {
   .container {
     max-width: 1200px;
+  }
+}
+
+/* Form improvements */
+.form-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .form-container {
+    max-width: 42rem;
+  }
+}
+
+/* Ensure consistent button sizing */
+.btn-consistent {
+  min-height: 2.75rem;
+  padding: 0.75rem 2rem;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
