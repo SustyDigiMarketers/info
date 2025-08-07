@@ -21,7 +21,7 @@ const contactDetails = [
   {
     icon: Mail,
     title: 'Email Addresses',
-    details: ['Contact@sustydigimarketers.com', 'Sales@sustydigimarketers.com', 'info@sustydigimarketers.com'],
+    details: ['info@sustydigimarketers.com', 'General inquiries and support', 'Response within 24 hours'],
     color: 'from-green-500 to-emerald-600',
   },
   {

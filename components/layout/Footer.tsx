@@ -73,8 +73,8 @@ export function Footer() {
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link href="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link></li>
               <li><Link href="/products" className="text-gray-300 hover:text-white transition-colors">Products</Link></li>
+              <li><Link href="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link></li>
               <li><Link href="/portfolio" className="text-gray-300 hover:text-white transition-colors">Portfolio</Link></li>
               <li><Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
             </ul>
@@ -98,11 +98,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-gray-400" />
-                <div className="text-gray-300 text-sm">
-                  <div>Contact@sustydigimarketers.com</div>
-                  <div>Sales@sustydigimarketers.com</div>
-                  <div>info@sustydigimarketers.com</div>
-                </div>
+                <span className="text-gray-300 text-sm">info@sustydigimarketers.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-gray-400" />

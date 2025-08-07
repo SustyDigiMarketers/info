@@ -1,11 +1,50 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
+const typingTexts = [
+  "Tech Solutions for the Digital Age",
+  "Innovative SaaS Products for Business Growth",
+  "Digital Services That Transform Companies",
+  "AI-Powered Solutions for Modern Enterprises"
+];
 export function Hero() {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    const currentText = typingTexts[currentTextIndex];
+    let timeout: NodeJS.Timeout;
+
+    if (isTyping) {
+      if (displayText.length < currentText.length) {
+        timeout = setTimeout(() => {
+          setDisplayText(currentText.slice(0, displayText.length + 1));
+        }, 100);
+      } else {
+        timeout = setTimeout(() => {
+          setIsTyping(false);
+        }, 2000);
+      }
+    } else {
+      if (displayText.length > 0) {
+        timeout = setTimeout(() => {
+          setDisplayText(displayText.slice(0, -1));
+        }, 50);
+      } else {
+        setCurrentTextIndex((prev) => (prev + 1) % typingTexts.length);
+        setIsTyping(true);
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isTyping, currentTextIndex]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Background Animation */}
@@ -28,20 +67,30 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Tech Solutions for the{' '}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Digital Age
+              {displayText}
+              <span className="animate-pulse">|</span>
             </span>
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Leading tech company offering innovative SaaS products and comprehensive digital services. 
-            From CRM systems to AI automation - we transform businesses digitally.
+            From CRM systems to AI automation - we transform businesses digitally with cutting-edge technology solutions.
+          </motion.p>
+
+          <motion.p
+            className="text-lg text-gray-500 max-w-3xl mx-auto mt-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            Trusted by 500+ businesses worldwide, we deliver scalable solutions that drive growth, 
+            enhance productivity, and create lasting digital transformation for companies of all sizes.
           </motion.p>
 
           <motion.div
@@ -52,15 +101,14 @@ export function Hero() {
           >
             <Link href="/products">
               <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg">
-                Explore Products
+                Learn More
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
             
-            <Link href="/services">
+            <Link href="/contact">
               <Button variant="outline" size="lg" className="px-8 py-4 text-lg border-2 hover:bg-gray-50">
-                <Play className="mr-2 w-5 h-5" />
-                View Services
+                Contact Us
               </Button>
             </Link>
           </motion.div>

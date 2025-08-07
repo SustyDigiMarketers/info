@@ -25,30 +25,43 @@ export function ContactForm() {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // Here you would typically send the data to your backend
-    const contactData = {
-      ...formData,
-      timestamp: new Date().toISOString(),
-      type: 'contact_inquiry',
-    };
-    
-    console.log('Contact inquiry:', contactData);
-    
-    toast.success('Message sent successfully! We\'ll get back to you within 24 hours.');
-    setIsLoading(false);
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      subject: '',
-      message: '',
-    });
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbww735qKYaIPKxqWoGsXRrqhyDkSax37V8w7iZbosaJZLFR3DtqZ2eay2j-7kuyGEroXg/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sheet: 'contact',
+          Name: formData.name,
+          Email: formData.email,
+          Phone: formData.phone,
+          Company: formData.company,
+          Subject: formData.subject,
+          Message: formData.message,
+          Date: new Date().toISOString(),
+          Type: 'contact_inquiry'
+        }),
+      });
+
+      if (response.ok) {
+        toast.success('Message sent successfully! We\'ll get back to you within 24 hours.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast.error('Failed to send message. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -67,16 +80,16 @@ export function ContactForm() {
 
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Send us a Message</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Send us a Message</h2>
           
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <Label htmlFor="name" className="flex items-center space-x-2">
@@ -91,6 +104,7 @@ export function ContactForm() {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Enter your full name"
+                  className="w-full"
                 />
               </div>
 
@@ -107,6 +121,7 @@ export function ContactForm() {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Enter your email"
+                  className="w-full"
                 />
               </div>
 
@@ -122,6 +137,7 @@ export function ContactForm() {
                   value={formData.phone}
                   onChange={handleInputChange}
                   placeholder="Enter your phone number"
+                  className="w-full"
                 />
               </div>
 
@@ -134,13 +150,14 @@ export function ContactForm() {
                   value={formData.company}
                   onChange={handleInputChange}
                   placeholder="Enter your company name"
+                  className="w-full"
                 />
               </div>
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="subject">Subject *</Label>
-              <Select onValueChange={handleSelectChange} required>
+              <Select onValueChange={handleSelectChange} required value={formData.subject}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select inquiry type" />
                 </SelectTrigger>
@@ -168,13 +185,14 @@ export function ContactForm() {
                 onChange={handleInputChange}
                 placeholder="Tell us about your project or inquiry..."
                 rows={6}
+                className="w-full resize-none"
               />
             </div>
 
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 py-3"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 py-3 text-lg"
             >
               {isLoading ? 'Sending...' : 'Send Message'}
               <Send className="ml-2 w-4 h-4" />
