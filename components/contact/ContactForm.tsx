@@ -26,22 +26,24 @@ export function ContactForm() {
     setIsLoading(true);
     
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbww735qKYaIPKxqWoGsXRrqhyDkSax37V8w7iZbosaJZLFR3DtqZ2eay2j-7kuyGEroXg/exec', {
+      // Create URL-encoded form data
+      const formData = new URLSearchParams();
+      formData.append('sheet', 'contact');
+      formData.append('Name', formData.name);
+      formData.append('Email', formData.email);
+      formData.append('Phone', formData.phone);
+      formData.append('Company', formData.company);
+      formData.append('Subject', formData.subject);
+      formData.append('Message', formData.message);
+      formData.append('Date', new Date().toISOString());
+      formData.append('Type', 'contact_inquiry');
+
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwJprulTJJTIp4PR7Ie2U01fApvmPeVgzOa0WenfuktHJNKHeKhZRsuXoIysMs6ad9LvA/exec', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify({
-          sheet: 'contact',
-          Name: formData.name,
-          Email: formData.email,
-          Phone: formData.phone,
-          Company: formData.company,
-          Subject: formData.subject,
-          Message: formData.message,
-          Date: new Date().toISOString(),
-          Type: 'contact_inquiry'
-        }),
+        body: formData,
       });
 
       if (response.ok) {

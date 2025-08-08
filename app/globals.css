@@ -131,13 +131,25 @@ html {
     padding-right: 1rem;
   }
   
-  /* Fix form spacing on mobile */
-  .space-y-6 > * + * {
+  /* Improved form spacing on mobile */
+  .form-container {
+    padding: 1rem;
+  }
+  
+  .form-container .space-y-6 > * + * {
     margin-top: 1.5rem;
   }
   
-  .space-y-4 > * + * {
-    margin-top: 1rem;
+  .form-container .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  /* Better button sizing on mobile */
+  .btn-consistent {
+    min-height: 3rem;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
   }
 }
 

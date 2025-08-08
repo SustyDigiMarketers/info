@@ -7,11 +7,14 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 const typingTexts = [
-  "Tech Solutions for the Digital Age",
-  "Innovative SaaS Products for Business Growth",
+  "Elevating Tech for the Future",
+  "Innovative SaaS Products for Business Growth", 
   "Digital Services That Transform Companies",
-  "AI-Powered Solutions for Modern Enterprises"
+  "AI-Powered Solutions for Modern Enterprises",
+  "Custom Software Development Excellence",
+  "Mobile Apps That Drive Success"
 ];
+
 export function Hero() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
@@ -79,18 +82,29 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Leading tech company offering innovative SaaS products and comprehensive digital services. 
-            From CRM systems to AI automation - we transform businesses digitally with cutting-edge technology solutions.
+            At Susty Digi Marketers, we specialize in creating innovative technology solutions that drive business transformation. 
+            Our comprehensive suite of SaaS products and digital services empowers companies to thrive in the digital age.
           </motion.p>
 
           <motion.p
-            className="text-lg text-gray-500 max-w-3xl mx-auto mt-4"
+            className="text-lg text-gray-500 max-w-4xl mx-auto mt-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            Trusted by 500+ businesses worldwide, we deliver scalable solutions that drive growth, 
-            enhance productivity, and create lasting digital transformation for companies of all sizes.
+            From advanced CRM systems with WhatsApp integration to AI-powered automation solutions, 
+            we deliver scalable technology that enhances productivity, streamlines operations, and accelerates growth. 
+            Trusted by 500+ businesses worldwide, we're your partner in digital transformation.
+          </motion.p>
+
+          <motion.p
+            className="text-base text-gray-400 max-w-3xl mx-auto mt-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            Whether you need custom software development, mobile app creation, or comprehensive digital marketing services, 
+            our expert team combines technical excellence with creative innovation to deliver results that matter.
           </motion.p>
 
           <motion.div

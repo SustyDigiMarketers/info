@@ -47,26 +47,28 @@ export function ProjectModal({ isOpen, onClose, serviceId, serviceName }: Projec
     setIsLoading(true);
     
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbww735qKYaIPKxqWoGsXRrqhyDkSax37V8w7iZbosaJZLFR3DtqZ2eay2j-7kuyGEroXg/exec', {
+      // Create URL-encoded form data
+      const urlFormData = new URLSearchParams();
+      urlFormData.append('sheet', 'projects');
+      urlFormData.append('Name', formData.name);
+      urlFormData.append('Email', formData.email);
+      urlFormData.append('Phone', formData.phone);
+      urlFormData.append('Company', formData.company);
+      urlFormData.append('Address', formData.address);
+      urlFormData.append('Budget', formData.budget);
+      urlFormData.append('Timeline', formData.timeline);
+      urlFormData.append('ProjectDetails', formData.projectDetails);
+      urlFormData.append('ServiceID', serviceId);
+      urlFormData.append('ServiceName', serviceName);
+      urlFormData.append('Date', new Date().toISOString());
+      urlFormData.append('Type', 'project_inquiry');
+
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwJprulTJJTIp4PR7Ie2U01fApvmPeVgzOa0WenfuktHJNKHeKhZRsuXoIysMs6ad9LvA/exec', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify({
-          sheet: 'projects',
-          Name: formData.name,
-          Email: formData.email,
-          Phone: formData.phone,
-          Company: formData.company,
-          Address: formData.address,
-          Budget: formData.budget,
-          Timeline: formData.timeline,
-          ProjectDetails: formData.projectDetails,
-          ServiceID: serviceId,
-          ServiceName: serviceName,
-          Date: new Date().toISOString(),
-          Type: 'project_inquiry'
-        }),
+        body: urlFormData.toString(),
       });
 
       if (response.ok) {

@@ -110,6 +110,18 @@ export function Footer() {
               </div>
             </div>
           </div>
+
+          {/* Products */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Products</h3>
+            <ul className="space-y-2">
+              <li><Link href="/products#crm-whatsapp" className="text-gray-300 hover:text-white transition-colors">CRM with WhatsApp</Link></li>
+              <li><Link href="/products#billing-system" className="text-gray-300 hover:text-white transition-colors">Billing System</Link></li>
+              <li><Link href="/products#pos-system" className="text-gray-300 hover:text-white transition-colors">POS System</Link></li>
+              <li><Link href="/products#lms-product" className="text-gray-300 hover:text-white transition-colors">LMS Product</Link></li>
+              <li><Link href="/products#task-management" className="text-gray-300 hover:text-white transition-colors">Task Management</Link></li>
+            </ul>
+          </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">

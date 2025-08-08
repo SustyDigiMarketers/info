@@ -126,7 +126,7 @@ export function ServicesGrid() {
     <>
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
@@ -135,14 +135,14 @@ export function ServicesGrid() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full w-full max-w-sm hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
                   {service.popular && (
                     <Badge className="absolute top-4 right-4 bg-gradient-to-r from-orange-500 to-red-500 text-white">
                       Popular
                     </Badge>
                   )}
                   
-                  <CardHeader className="text-center pb-4 px-6">
+                  <CardHeader className="text-center pb-4">
                     <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-r ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
@@ -153,7 +153,7 @@ export function ServicesGrid() {
                     </div>
                   </CardHeader>
                   
-                  <CardContent className="space-y-4 px-6 pb-6">
+                  <CardContent className="space-y-4">
                     <CardDescription className="text-gray-600 mb-4">
                       {service.description}
                     </CardDescription>

@@ -46,24 +46,26 @@ export function TrialModal({ isOpen, onClose, productId, productName }: TrialMod
     setIsLoading(true);
     
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbww735qKYaIPKxqWoGsXRrqhyDkSax37V8w7iZbosaJZLFR3DtqZ2eay2j-7kuyGEroXg/exec', {
+      // Create URL-encoded form data
+      const urlFormData = new URLSearchParams();
+      urlFormData.append('sheet', 'trials');
+      urlFormData.append('Name', formData.name);
+      urlFormData.append('Email', formData.email);
+      urlFormData.append('Phone', formData.phone);
+      urlFormData.append('Company', formData.company);
+      urlFormData.append('Address', formData.address);
+      urlFormData.append('Requirements', formData.requirements);
+      urlFormData.append('ProductID', productId);
+      urlFormData.append('ProductName', productName);
+      urlFormData.append('Date', new Date().toISOString());
+      urlFormData.append('Type', 'trial_request');
+
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwJprulTJJTIp4PR7Ie2U01fApvmPeVgzOa0WenfuktHJNKHeKhZRsuXoIysMs6ad9LvA/exec', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify({
-          sheet: 'trials',
-          Name: formData.name,
-          Email: formData.email,
-          Phone: formData.phone,
-          Company: formData.company,
-          Address: formData.address,
-          Requirements: formData.requirements,
-          ProductID: productId,
-          ProductName: productName,
-          Date: new Date().toISOString(),
-          Type: 'trial_request'
-        }),
+        body: urlFormData.toString(),
       });
 
       if (response.ok) {
