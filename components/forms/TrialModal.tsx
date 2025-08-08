@@ -48,7 +48,7 @@ export function TrialModal({ isOpen, onClose, productId, productName }: TrialMod
     try {
       // Create URL-encoded form data
       const urlFormData = new URLSearchParams();
-      urlFormData.append('sheet', 'trials');
+      urlFormData.append('sheet', 'Product');
       urlFormData.append('Name', formData.name);
       urlFormData.append('Email', formData.email);
       urlFormData.append('Phone', formData.phone);
