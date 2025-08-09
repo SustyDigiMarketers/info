@@ -27,27 +27,27 @@ export function ContactForm() {
     
     try {
       // Create URL-encoded form data
-      const formData = new URLSearchParams();
-      formData.append('sheet', 'contact');
-      formData.append('Name', formData.name);
-      formData.append('Email', formData.email);
-      formData.append('Phone', formData.phone);
-      formData.append('Company', formData.company);
-      formData.append('Subject', formData.subject);
-      formData.append('Message', formData.message);
-      formData.append('Date', new Date().toISOString());
-      formData.append('Type', 'contact_inquiry');
+      const urlFormData = new URLSearchParams();
+      urlFormData.append('sheet', 'contact');
+      urlFormData.append('Name', formData.name);
+      urlFormData.append('Email', formData.email);
+      urlFormData.append('Phone', formData.phone);
+      urlFormData.append('Company', formData.company);
+      urlFormData.append('Subject', formData.subject);
+      urlFormData.append('Message', formData.message);
+      urlFormData.append('Date', new Date().toISOString());
+      urlFormData.append('Type', 'contact_inquiry');
 
       const response = await fetch('https://script.google.com/macros/s/AKfycbwJprulTJJTIp4PR7Ie2U01fApvmPeVgzOa0WenfuktHJNKHeKhZRsuXoIysMs6ad9LvA/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: formData,
+        body: urlFormData.toString(),
       });
 
       if (response.ok) {
-        toast.success('Message sent successfully! We\'ll get back to you within 24 hours.');
+        toast.success('Form submitted successfully! We\'ll get back to you within 24 hours.');
         setFormData({
           name: '',
           email: '',

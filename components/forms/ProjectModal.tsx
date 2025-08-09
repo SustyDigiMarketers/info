@@ -49,7 +49,7 @@ export function ProjectModal({ isOpen, onClose, serviceId, serviceName }: Projec
     try {
       // Create URL-encoded form data
       const urlFormData = new URLSearchParams();
-      urlFormData.append('sheet', 'Service');
+      urlFormData.append('sheet', 'service');
       urlFormData.append('Name', formData.name);
       urlFormData.append('Email', formData.email);
       urlFormData.append('Phone', formData.phone);
@@ -72,7 +72,7 @@ export function ProjectModal({ isOpen, onClose, serviceId, serviceName }: Projec
       });
 
       if (response.ok) {
-        toast.success('Project inquiry submitted successfully! We\'ll contact you within 24 hours.');
+        toast.success('Form submitted successfully! We\'ll contact you within 24 hours.');
         setFormData({
           name: '',
           email: '',
