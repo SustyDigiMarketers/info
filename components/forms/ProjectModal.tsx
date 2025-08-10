@@ -47,32 +47,39 @@ export function ProjectModal({ isOpen, onClose, serviceId, serviceName }: Projec
     setIsLoading(true);
     
     try {
-      // Create URL-encoded form data
-      const urlFormData = new URLSearchParams();
-      urlFormData.append('sheet', 'service');
-      urlFormData.append('Name', formData.name);
-      urlFormData.append('Email', formData.email);
-      urlFormData.append('Phone', formData.phone);
-      urlFormData.append('Company', formData.company);
-      urlFormData.append('Address', formData.address);
-      urlFormData.append('Budget', formData.budget);
-      urlFormData.append('Timeline', formData.timeline);
-      urlFormData.append('ProjectDetails', formData.projectDetails);
-      urlFormData.append('ServiceID', serviceId);
-      urlFormData.append('ServiceName', serviceName);
-      urlFormData.append('Date', new Date().toISOString());
-      urlFormData.append('Type', 'project_inquiry');
+      // Serialize all form fields into URLSearchParams
+      const formDataObject = {
+        sheet: 'service',
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        address: formData.address,
+        budget: formData.budget,
+        timeline: formData.timeline,
+        projectDetails: formData.projectDetails,
+        serviceId: serviceId,
+        serviceName: serviceName,
+        date: new Date().toISOString(),
+        type: 'project_inquiry',
+        timestamp: Date.now().toString(),
+        source: 'website_project_form',
+        status: 'new_inquiry',
+        priority: 'normal'
+      };
+      
+      const body = new URLSearchParams(formDataObject).toString();
 
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwJprulTJJTIp4PR7Ie2U01fApvmPeVgzOa0WenfuktHJNKHeKhZRsuXoIysMs6ad9LvA/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyq_wS8tWhD-K-pOJCYThnsF4KfMPsQ0TMKFhJZVufWIIGqCzoY-f-E5ReFSSWRyrG72g/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: urlFormData.toString(),
+        body: body,
       });
 
       if (response.ok) {
-        toast.success('Form submitted successfully! We\'ll contact you within 24 hours.');
+        toast.success('Form submitted successfully!');
         setFormData({
           name: '',
           email: '',
