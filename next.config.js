@@ -1,12 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  eslint: {
-    ignoreDuringBuilds: true,
+  output: "export",        // tells Next.js to generate static HTML (for GitHub Pages)
+  images: {
+    unoptimized: true,     // disables server-side image optimization (not supported on Pages)
   },
-  images: { unoptimized: true },
-  basePath: "/info",
-  assetPrefix: "/info/",
 };
 
 module.exports = nextConfig;
