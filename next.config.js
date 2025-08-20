@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",        // tells Next.js to generate static HTML (for GitHub Pages)
+  output: 'export',  // for static export
   images: {
-    unoptimized: true,     // disables server-side image optimization (not supported on Pages)
+    unoptimized: true,
   },
+  assetPrefix: "./", // helps CSS/JS load correctly on GitHub Pages
 };
 
 module.exports = nextConfig;
