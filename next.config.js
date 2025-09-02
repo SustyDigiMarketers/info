@@ -4,7 +4,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: "./", // helps CSS/JS load correctly on GitHub Pages
 };
 
 module.exports = nextConfig;
