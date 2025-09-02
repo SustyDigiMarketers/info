@@ -48,26 +48,27 @@ export function TrialModal({ isOpen, onClose, productId, productName }: TrialMod
     try {
       // Serialize all form fields into URLSearchParams
       const formDataObject = {
-        sheet: 'product',
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        company: formData.company,
-        address: formData.address,
-        requirements: formData.requirements,
-        productId: productId,
-        productName: productName,
+        sheet: 'product', // Route to product sheet
+        name: formData.name || '',
+        email: formData.email || '',
+        phone: formData.phone || '',
+        company: formData.company || '',
+        address: formData.address || '',
+        requirements: formData.requirements || '',
+        productId: productId || '',
+        productName: productName || '',
         date: new Date().toISOString(),
         type: 'trial_request',
         timestamp: Date.now().toString(),
         source: 'website_trial_form',
         trialDuration: '14_days',
-        status: 'pending'
+        status: 'pending',
+        priority: 'high'
       };
       
       const body = new URLSearchParams(formDataObject).toString();
 
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyq_wS8tWhD-K-pOJCYThnsF4KfMPsQ0TMKFhJZVufWIIGqCzoY-f-E5ReFSSWRyrG72g/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwJprulTJJTIp4PR7Ie2U01fApvmPeVgzOa0WenfuktHJNKHeKhZRsuXoIysMs6ad9LvA/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -76,7 +77,7 @@ export function TrialModal({ isOpen, onClose, productId, productName }: TrialMod
       });
 
       if (response.ok) {
-        toast.success('Form submitted successfully!');
+        toast.success('Trial request submitted successfully! We\'ll contact you within 24 hours.');
         setFormData({
           name: '',
           email: '',

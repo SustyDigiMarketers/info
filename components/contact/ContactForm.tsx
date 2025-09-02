@@ -28,22 +28,24 @@ export function ContactForm() {
     try {
       // Serialize all form fields into URLSearchParams
       const formDataObject = {
-        sheet: 'contact',
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        company: formData.company,
-        subject: formData.subject,
-        message: formData.message,
+        sheet: 'contact', // Route to contact sheet
+        name: formData.name || '',
+        email: formData.email || '',
+        phone: formData.phone || '',
+        company: formData.company || '',
+        subject: formData.subject || '',
+        message: formData.message || '',
         date: new Date().toISOString(),
         type: 'contact_inquiry',
         timestamp: Date.now().toString(),
-        source: 'website_contact_form'
+        source: 'website_contact_form',
+        status: 'new',
+        priority: 'normal'
       };
       
       const body = new URLSearchParams(formDataObject).toString();
 
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyq_wS8tWhD-K-pOJCYThnsF4KfMPsQ0TMKFhJZVufWIIGqCzoY-f-E5ReFSSWRyrG72g/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwJprulTJJTIp4PR7Ie2U01fApvmPeVgzOa0WenfuktHJNKHeKhZRsuXoIysMs6ad9LvA/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -52,7 +54,7 @@ export function ContactForm() {
       });
 
       if (response.ok) {
-        toast.success('Form submitted successfully!');
+        toast.success('Message sent successfully! We\'ll get back to you soon.');
         setFormData({
           name: '',
           email: '',

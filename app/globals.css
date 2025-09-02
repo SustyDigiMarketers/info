@@ -131,6 +131,41 @@ html {
     padding-right: 1rem;
   }
   
+  /* Hero section mobile fixes */
+  .hero-section {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  
+  .hero-button {
+    width: 100%;
+    min-height: 3rem;
+    font-size: 1rem;
+  }
+  
   /* Improved form spacing on mobile */
   .form-container {
     padding: 1rem;

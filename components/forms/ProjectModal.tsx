@@ -49,17 +49,17 @@ export function ProjectModal({ isOpen, onClose, serviceId, serviceName }: Projec
     try {
       // Serialize all form fields into URLSearchParams
       const formDataObject = {
-        sheet: 'service',
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        company: formData.company,
-        address: formData.address,
-        budget: formData.budget,
-        timeline: formData.timeline,
-        projectDetails: formData.projectDetails,
-        serviceId: serviceId,
-        serviceName: serviceName,
+        sheet: 'service', // Route to service sheet
+        name: formData.name || '',
+        email: formData.email || '',
+        phone: formData.phone || '',
+        company: formData.company || '',
+        address: formData.address || '',
+        budget: formData.budget || '',
+        timeline: formData.timeline || '',
+        projectDetails: formData.projectDetails || '',
+        serviceId: serviceId || '',
+        serviceName: serviceName || '',
         date: new Date().toISOString(),
         type: 'project_inquiry',
         timestamp: Date.now().toString(),
@@ -70,7 +70,7 @@ export function ProjectModal({ isOpen, onClose, serviceId, serviceName }: Projec
       
       const body = new URLSearchParams(formDataObject).toString();
 
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyq_wS8tWhD-K-pOJCYThnsF4KfMPsQ0TMKFhJZVufWIIGqCzoY-f-E5ReFSSWRyrG72g/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwJprulTJJTIp4PR7Ie2U01fApvmPeVgzOa0WenfuktHJNKHeKhZRsuXoIysMs6ad9LvA/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -79,7 +79,7 @@ export function ProjectModal({ isOpen, onClose, serviceId, serviceName }: Projec
       });
 
       if (response.ok) {
-        toast.success('Form submitted successfully!');
+        toast.success('Project inquiry submitted successfully! We\'ll review and contact you soon.');
         setFormData({
           name: '',
           email: '',

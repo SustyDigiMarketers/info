@@ -52,32 +52,32 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Background Animation */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-40 left-40 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        <div className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-40 h-40 sm:w-80 sm:h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div className="absolute -bottom-20 -left-20 sm:-bottom-40 sm:-left-40 w-40 h-40 sm:w-80 sm:h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-20 left-20 sm:top-40 sm:left-40 w-40 h-40 sm:w-80 sm:h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-8 sm:py-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight px-2"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               {displayText}
-              <span className="animate-pulse">|</span>
+              <span className="animate-pulse text-blue-600">|</span>
             </span>
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto"
+            className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -87,7 +87,7 @@ export function Hero() {
           </motion.p>
 
           <motion.p
-            className="text-lg text-gray-500 max-w-4xl mx-auto mt-6"
+            className="text-base sm:text-lg text-gray-500 max-w-4xl mx-auto mt-4 sm:mt-6 px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -98,7 +98,7 @@ export function Hero() {
           </motion.p>
 
           <motion.p
-            className="text-base text-gray-400 max-w-3xl mx-auto mt-4"
+            className="text-sm sm:text-base text-gray-400 max-w-3xl mx-auto mt-3 sm:mt-4 px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -108,20 +108,20 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Link href="/products">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg">
+              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto">
                 Learn More
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
             
             <Link href="/contact">
-              <Button variant="outline" size="lg" className="px-8 py-4 text-lg border-2 hover:bg-gray-50">
+              <Button variant="outline" size="lg" className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg border-2 hover:bg-gray-50 w-full sm:w-auto">
                 Contact Us
               </Button>
             </Link>
@@ -129,26 +129,26 @@ export function Hero() {
 
           {/* Stats */}
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-12 sm:mt-16 px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-gray-900">500+</div>
-              <div className="text-gray-600">Happy Clients</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">500+</div>
+              <div className="text-sm sm:text-base text-gray-600">Happy Clients</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-gray-900">9</div>
-              <div className="text-gray-600">SaaS Products</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">12</div>
+              <div className="text-sm sm:text-base text-gray-600">SaaS Products</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-gray-900">99%</div>
-              <div className="text-gray-600">Uptime</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">99%</div>
+              <div className="text-sm sm:text-base text-gray-600">Uptime</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-gray-900">24/7</div>
-              <div className="text-gray-600">Support</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">24/7</div>
+              <div className="text-sm sm:text-base text-gray-600">Support</div>
             </div>
           </motion.div>
         </motion.div>
