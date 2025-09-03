@@ -1,18 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from '@next/font/google';
 import Script from 'next/script';
 import { Toaster } from 'sonner';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppWidget } from '@/components/widgets/WhatsAppWidget';
 import { VisitorCounter } from '@/components/widgets/VisitorCounter';
-
-const inter = Inter({ 
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-});
 
 export const metadata: Metadata = {
   title: 'Susty Digi Marketers - Tech Solutions & Digital Services',
@@ -97,7 +90,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body>
         <Navbar />
         <main className="min-h-screen">
           {children}
