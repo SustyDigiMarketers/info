@@ -19,7 +19,7 @@ export function AboutHero() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto">
-            We're passionate about creating innovative technology solutions for the digital age, 
+            We&apos;re passionate about creating innovative technology solutions for the digital age, 
             that transform businesses and drive digital success.
           </p>
         </motion.div>
