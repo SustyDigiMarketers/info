@@ -54,7 +54,7 @@ export function ContactForm() {
       });
 
       if (response.ok) {
-        toast.success('Message sent successfully! We\'ll get back to you soon.');
+        toast.success('Message sent successfully! We&apos;ll get back to you soon.');
         setFormData({
           name: '',
           email: '',

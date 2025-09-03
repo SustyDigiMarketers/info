@@ -79,7 +79,7 @@ export function ProjectModal({ isOpen, onClose, serviceId, serviceName }: Projec
       });
 
       if (response.ok) {
-        toast.success('Project inquiry submitted successfully! We\'ll review and contact you soon.');
+        toast.success('Project inquiry submitted successfully! We&apos;ll review and contact you soon.');
         setFormData({
           name: '',
           email: '',

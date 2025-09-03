@@ -46,7 +46,7 @@ export function CompanyStory() {
             Our Journey
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From a small startup to a leading technology company, here&apos;s how we&apos;ve grown 
+            A glimpse of the innovative projects we&apos;ve delivered for our clients across various industries.
             and evolved to serve businesses worldwide.
           </p>
         </motion.div>

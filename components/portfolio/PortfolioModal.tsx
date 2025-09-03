@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Calendar, User, TrendingUp, Code } from 'lucide-react';
@@ -60,9 +61,11 @@ export function PortfolioModal({ item, isOpen, onClose }: PortfolioModalProps) {
           >
             {/* Header */}
             <div className="relative">
-              <img
+              <Image
                 src={item.image}
                 alt={item.title}
+                width={1024}
+                height={320}
                 className="w-full h-64 md:h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">

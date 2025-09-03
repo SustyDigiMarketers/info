@@ -77,7 +77,7 @@ export function TrialModal({ isOpen, onClose, productId, productName }: TrialMod
       });
 
       if (response.ok) {
-        toast.success('Trial request submitted successfully! We\'ll contact you within 24 hours.');
+        toast.success('Trial request submitted successfully! We&apos;ll contact you within 24 hours.');
         setFormData({
           name: '',
           email: '',

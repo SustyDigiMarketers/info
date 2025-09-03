@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Linkedin, Twitter, Mail } from 'lucide-react';
 
@@ -80,9 +81,11 @@ export function TeamSection() {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               <div className="aspect-square overflow-hidden">
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
+                  width={300}
+                  height={300}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>

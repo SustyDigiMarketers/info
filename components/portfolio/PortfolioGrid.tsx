@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Eye, Calendar, Tag } from 'lucide-react';
@@ -167,9 +168,11 @@ export function PortfolioGrid() {
                 >
                   <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer h-full">
                     <div className="relative overflow-hidden">
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.title}
+                        width={800}
+                        height={256}
                         className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
