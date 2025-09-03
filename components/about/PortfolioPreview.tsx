@@ -52,7 +52,7 @@ export function PortfolioPreview() {
             Our Work
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A glimpse of the innovative projects we've delivered for our clients across various industries.
+            A glimpse of the innovative projects we&apos;ve delivered for our clients across various industries.
           </p>
         </motion.div>
 
