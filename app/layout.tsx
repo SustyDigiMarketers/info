@@ -10,8 +10,9 @@ import { VisitorCounter } from '@/components/widgets/VisitorCounter';
 export const metadata: Metadata = {
   title: 'Susty Digi Marketers - Tech Solutions & Digital Services',
   description: 'Leading tech company offering SaaS products and digital services including CRM, POS systems, mobile apps, web development, and AI automation solutions.',
-  keywords: 'digital marketing, SaaS, CRM, POS system, web development, mobile apps, SEO',
+  keywords: 'digital marketing, SaaS, CRM, POS system, web development, mobile apps, SEO, AI automation, custom software',
   authors: [{ name: 'Susty Digi Marketers' }],
+  metadataBase: new URL('https://sustydigimarketers.com'),
   openGraph: {
     title: 'Susty Digi Marketers - Tech Solutions & Digital Services',
     description: 'Leading tech company offering SaaS products and digital services including CRM, POS systems, mobile apps, web development, and AI automation solutions.',
@@ -33,6 +34,8 @@ export const metadata: Metadata = {
     title: 'Susty Digi Marketers - Tech Solutions & Digital Services',
     description: 'Leading tech company offering SaaS products and digital services including CRM, POS systems, mobile apps, web development, and AI automation solutions.',
     images: ['/og-image.jpg'],
+    creator: '@SustyDigi',
+    site: '@SustyDigi',
   },
   robots: {
     index: true,
@@ -44,6 +47,12 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  verification: {
+    google: 'your-google-verification-code', // Add your Google Search Console verification
+  },
+  alternates: {
+    canonical: 'https://sustydigimarketers.com',
   },
 };
 
