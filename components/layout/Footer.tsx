@@ -16,6 +16,7 @@ export function Footer() {
                 width={32}
                 height={32}
                 className="w-8 h-8"
+                unoptimized={true}
               />
               <span className="font-bold text-lg">Susty Digi Marketers</span>
             </div>

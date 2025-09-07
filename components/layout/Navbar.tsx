@@ -51,6 +51,7 @@ export function Navbar() {
                 width={40}
                 height={40}
                 className="w-10 h-10"
+                unoptimized={true}
               />
               <span className="font-bold text-xl text-gray-900">
                 Susty Digi Marketers
