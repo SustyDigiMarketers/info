@@ -95,6 +95,7 @@ export function Hero() {
             From advanced CRM systems with WhatsApp integration to AI-powered automation solutions, 
             we deliver scalable technology that enhances productivity, streamlines operations, and accelerates growth. 
             Trusted by 500+ businesses worldwide, we're your partner in digital transformation.
+            Trusted by 500+ businesses worldwide, we&apos;re your partner in digital transformation.
           </motion.p>
 
           <motion.p

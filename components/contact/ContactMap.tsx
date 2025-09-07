@@ -15,7 +15,7 @@ export function ContactMap() {
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Find Us</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Visit our office or schedule a meeting. We're located in the heart of the tech district.
+            Visit our office or schedule a meeting. We&apos;re located in the heart of the tech district.
           </p>
         </motion.div>
 

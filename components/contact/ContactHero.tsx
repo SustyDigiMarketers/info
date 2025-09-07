@@ -19,7 +19,7 @@ export function ContactHero() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-8">
-            Ready to transform your business? Let's discuss your project and explore 
+            Ready to transform your business? Let&apos;s discuss your project and explore 
             how our solutions can drive your success.
           </p>
           

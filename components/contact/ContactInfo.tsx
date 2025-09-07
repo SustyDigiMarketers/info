@@ -46,7 +46,7 @@ export function ContactInfo() {
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Information</h2>
             <p className="text-gray-600 mb-8">
-              We're here to help! Reach out to us through any of the following channels.
+              We&apos;re here to help! Reach out to us through any of the following channels.
             </p>
           </div>
 
