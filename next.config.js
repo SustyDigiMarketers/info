@@ -1,30 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static export for GitHub Pages
   output: 'export',
-  
-  // Set base path for GitHub Pages repository (consistent across environments)
-  basePath: '/info',
-  
-  // Disable image optimization for static export
+  // Only use basePath in production for GitHub Pages
+  basePath: process.env.NODE_ENV === 'production' ? '/info' : '',
   images: {
-    unoptimized: true,
+    unoptimized: true
   },
-  
-  // Enable compression
-  compress: true,
-  
-  // Enable SWC minification
-  swcMinify: true,
-  
-  // Optimize for production
-  poweredByHeader: false,
-  
-  // Trailing slash for better GitHub Pages compatibility
   trailingSlash: true,
-  
-  // Skip trailing slash redirect
   skipTrailingSlashRedirect: true,
-};
+  experimental: {
+    optimizePackageImports: ['lucide-react']
+  }
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
