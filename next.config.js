@@ -3,8 +3,8 @@ const nextConfig = {
   // Enable static export for GitHub Pages
   output: 'export',
   
-  // Set base path for GitHub Pages repository (only in production)
-  basePath: process.env.NODE_ENV === 'production' ? '/info' : '',
+  // Set base path for GitHub Pages repository (consistent across environments)
+  basePath: '/info',
   
   // Disable image optimization for static export
   images: {
