@@ -1,6 +1,5 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { Toaster } from 'sonner';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
@@ -63,42 +62,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://sustydigimarketers.com" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Susty Digi Marketers",
-              "description": "Leading tech company offering SaaS products and digital services",
-              "url": "https://sustydigimarketers.com",
-              "logo": "https://sustydigimarketers.com/logo.png",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "71-75 Shelton Street, Covent Garden",
-                "addressLocality": "London",
-                "addressCountry": "UK",
-                "postalCode": "WC2H 9JQ"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "020 4628 6577",
-                "contactType": "customer service"
-              },
-              "sameAs": [
-                "https://www.facebook.com/profile.php?id=61577932965591",
-                "https://www.instagram.com/sustydigimarketers",
-                "https://www.youtube.com/@SustyDigiMarketers",
-                "https://www.reddit.com/user/TechnicalSnow3450",
-                "https://x.com/SustyDigi"
-              ]
-            })
-          }}
-        />
-      </head>
       <body>
         <Navbar />
         <main className="min-h-screen">
@@ -108,18 +71,6 @@ export default function RootLayout({
         <Toaster position="top-right" />
         <WhatsAppWidget />
         <VisitorCounter />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'GA_MEASUREMENT_ID');
-          `}
-        </Script>
       </body>
     </html>
   );
